@@ -1,0 +1,175 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="masterMain.master.vb" Inherits="ContainerChecking.masterMain" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="icon" href="~/Images/LogoAgilityIcon_001.png" />
+</head>
+<body>
+    <script type="text/javascript">
+        function openInNewTab() {
+            window.document.forms[0].target = '_blank'; 
+            setTimeout(function () { window.document.forms[0].target = ''; }, 0);
+        }
+    </script>
+
+    <style>
+        .button {
+                    -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                    background-color:dodgerblue;
+                    border-color:#CCCCCC;
+                    border-style:solid;
+                    font: bold 18px Calibri;
+                    color:white;
+        }
+        .button:hover{
+            cursor:pointer;
+        }
+
+        .imgButton{
+            width: 22px;
+        }
+
+        .imgButton:hover{
+            width: 30px;
+        }
+
+        .linkbuttonAsLabel {
+            color: #000000;
+            text-decoration: none;
+            font-family: Calibri;
+            font-weight: bold;
+            width: 150px;
+        }
+
+        .linkbuttonAsLabel:hover {
+            text-decoration: none;
+            font-size: large;
+        }
+
+    </style>
+    <form id="form1" runat="server">
+        <div id="divHead" runat="server" style="width:100%; border-color:darkblue; border-style:solid; border-radius:5px;">
+                <asp:Table runat="server" Width="100%" Font-Names="Calibri" >
+                    <asp:TableRow VerticalAlign="Middle">
+                        <asp:TableCell Width="5%">
+                            <asp:ImageButton ID="ibtLogoAgility" runat="server" ImageUrl="~/Images/LogoAgility.png" width="120px" />   
+                        </asp:TableCell>
+                        <asp:TableCell Width="45%">
+                            <asp:Label runat="server" Text="Container Checking" Font-Bold="true" ForeColor="darkblue" Font-Size="30px" Width="250px"></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell Width="20%" >
+                            <asp:Label runat="server" Text="" />
+                        </asp:TableCell>
+                        <asp:TableCell Width="30%" HorizontalAlign="Right" >
+                            <asp:Label ID="lbUsernameTop" runat="server" Text="[ username ]" />&nbsp;
+                        </asp:TableCell>
+                        <asp:TableCell HorizontalAlign="Center">
+                            <div runat="server" style="width:35px; border-left-style:solid; border-left-color:#CCCCCC; border-left-width:1px"><asp:ImageButton ID="ibtUserTop" runat="server" ImageUrl="~/Images/UserIcon_001.png" CssClass="imgButton"/></div>
+                        </asp:TableCell>
+                        <asp:TableCell HorizontalAlign="Center">
+                            <div runat="server" style="width:35px; border-left-style:solid; border-left-color:#CCCCCC; border-left-width:1px"><asp:ImageButton ID="ibtHome" runat="server" ImageUrl="~/Images/HomeIcon_001.png" CssClass="imgButton"/></div>
+                            
+                            
+                        </asp:TableCell>
+
+                    </asp:TableRow>
+                </asp:Table>
+            
+        </div>
+        <div id="divSideNav" runat="server" style="position:fixed; height:100%; width:230px; top:80px; left:10px; background-color:lightgrey;" >
+            <br />
+            &nbsp;&nbsp;<asp:ImageButton ID="ibtMenu" runat="server" CssClass="imgButton" ImageUrl="~/Images/MenuStickIcon_001.png" />
+            <br /><br />
+            <asp:Table runat="server" CellPadding="5">
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:ImageButton ID="ibtUserLeft" runat="server" CssClass="imgButton" ImageUrl="~/Images/UserIcon_001.png" ToolTip="User" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbUsernameLeft" runat="server" CssClass="linkbuttonAsLabel" Text="[username]"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell><asp:ImageButton ID="ibtMaster" runat="server" CssClass="imgButton" ImageUrl="~/Images/MasterData_001.png" ToolTip="Master Data" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbMaster" runat="server" CssClass="linkbuttonAsLabel" Text="Master Data"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+            </asp:Table>
+            
+            <asp:Table ID="tblSubmenuMaster" runat="server" CellPadding="5">
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:Label ID="lbDummy1" runat="server" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbLocation" runat="server" CssClass="linkbuttonAsLabel" Text="Location"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:Label ID="lbDummy2" runat="server" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbCustomer" runat="server" CssClass="linkbuttonAsLabel" Text="Customer"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+
+            <asp:Table runat="server" CellPadding="5">
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:ImageButton ID="ibtContainerList" runat="server" CssClass="imgButton" ImageUrl="~/Images/Container_002.png" ToolTip="Container List" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbContainer" runat="server" CssClass="linkbuttonAsLabel" Text="Container List"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell><asp:ImageButton ID="ibtInspection" runat="server" CssClass="imgButton" ImageUrl="~/Images/Inspection_001.png" ToolTip="Physical Inspection" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbInspection" runat="server" CssClass="linkbuttonAsLabel" Text="Physical Inspection"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell><asp:ImageButton ID="ibtTemperature" runat="server" CssClass="imgButton" ImageUrl="~/Images/Temperature_001.png" ToolTip="Temperature Log" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbTemperature" runat="server" CssClass="linkbuttonAsLabel" Text="Temperature Log"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell><asp:ImageButton ID="ibtPod" runat="server" CssClass="imgButton" ImageUrl="~/Images/Signature_002.png" ToolTip="POD" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbPod" runat="server" CssClass="linkbuttonAsLabel" Text="POD"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell><asp:ImageButton ID="ibtSetting" runat="server" CssClass="imgButton" ImageUrl="~/Images/Setting_002.png" ToolTip="Setting" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbSetting" runat="server" CssClass="linkbuttonAsLabel" Text="Setting"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+
+            <asp:Table ID="tblSubmenuSetting" runat="server" CellPadding="5">
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:Label ID="Label1" runat="server" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbUser" runat="server" CssClass="linkbuttonAsLabel" Text="User"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:Label ID="Label2" runat="server" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbRole" runat="server" CssClass="linkbuttonAsLabel" Text="Role"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+
+            <asp:Table runat="server" CellPadding="5">
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell><asp:ImageButton ID="ibtReport" CssClass="imgButton" runat="server" ImageUrl="~/Images/Report_002.png" ToolTip="Reports" OnClientClick="openInNewTab();" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbReport" runat="server" CssClass="linkbuttonAsLabel" Text="Reports" OnClientClick="openInNewTab();"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:ImageButton ID="ibtHelp" CssClass="imgButton" runat="server" ImageUrl="~/Images/Help_001.png" ToolTip="Help" OnClientClick="openInNewTab();" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbHelp" runat="server" CssClass="linkbuttonAsLabel" Text="User Guide" OnClientClick="openInNewTab();"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+
+
+                <asp:TableRow VerticalAlign="Middle">
+                    <asp:TableCell Width="40px"><asp:ImageButton ID="ibtLogout" CssClass="imgButton" runat="server" ImageUrl="~/Images/Logout_002.png" ToolTip="Logout" /></asp:TableCell>
+                    <asp:TableCell><asp:LinkButton ID="lbLogout" runat="server" CssClass="linkbuttonAsLabel" Text="Logout"></asp:LinkButton></asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+
+        </div>
+        <div id="divPlaceHolder" runat="server" style="position:fixed; top:80px; left:250px;">
+            <asp:ContentPlaceHolder ID="cphContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

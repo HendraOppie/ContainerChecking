@@ -1,0 +1,43 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MainMst.master.vb" Inherits="ContainerChecking.MainMst" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="divHead" runat="server" style="width:100%; border-color:darkblue; border-style:solid; border-radius:5px;">
+                <asp:Table runat="server" Width="100%" >
+                    <asp:TableRow VerticalAlign="Middle">
+                        <asp:TableCell Width="10%" >
+                            <asp:ImageButton ID="ibtLogoAgility" runat="server" ImageUrl="~/Images/LogoAgility.png" width="120px" />   
+                        </asp:TableCell>
+                        <asp:TableCell Width="70%" >
+                            <asp:Label runat="server" Text="Container Checking" Font-Names="Calibri" Font-Bold="true" ForeColor="DarkBlue" Font-Size="30px"></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell Width="20%" HorizontalAlign="Right">
+                            <asp:Label ID="lbUsername" runat="server" Text="[username]" font-names="Calibri" ></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="&nbsp;&nbsp;&nbsp;&nbsp;" font-names="Calibri" Font-Size="Large" ForeColor="#CCCCCC"></asp:Label>
+                            <asp:ImageButton ID="ibtUser" runat="server" ImageUrl="~/Images/UserIcon_001.png" Width="22px"/>
+                            <asp:Label ID="Label1" runat="server" Text="&nbsp;&nbsp;&nbsp;&nbsp;" font-names="Calibri" Font-Size="Large" ForeColor="#CCCCCC"></asp:Label>
+                            <asp:ImageButton ID="ibtHome" runat="server" ImageUrl="~/Images/HomeIcon_001.png" Width="22px" /> 
+                            <asp:Label ID="Label3" runat="server" Text="&nbsp;&nbsp;&nbsp;&nbsp;" font-names="Calibri" Font-Size="Large" ForeColor="#CCCCCC"></asp:Label>
+                        </asp:TableCell>
+
+                    </asp:TableRow>
+                </asp:Table>
+            
+        </div>
+        <div id="divSideNav" runat="server" style="position:fixed; height:100%; width:200px; top:80px; left:10px; background-color:#0026ff">
+                <asp:ImageButton ID="ibtMenu" runat="server" CssClass="button" ImageUrl="~/Images/MenuStickIcon_001.png" Width="30px" />        
+        </div>
+        <div id="divPlaceHolder" runat="server" style="position:fixed; top:80px; left:220px">
+            <asp:ContentPlaceHolder ID="cphContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>

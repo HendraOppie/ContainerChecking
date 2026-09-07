@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ContainerChecking", "ContainerChecking\ContainerChecking.vbproj", "{4790B743-967F-4DA4-B881-DD903671E845}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4790B743-967F-4DA4-B881-DD903671E845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4790B743-967F-4DA4-B881-DD903671E845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4790B743-967F-4DA4-B881-DD903671E845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4790B743-967F-4DA4-B881-DD903671E845}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {947F2CD1-DE05-4827-9813-D6727592AA6F}
+	EndGlobalSection
+EndGlobal
